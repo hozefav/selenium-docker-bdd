@@ -1,0 +1,9 @@
+#To cleanup system with all docker related images(?) and containers
+docker system prune -af
+
+#Running Zalenium container
+docker run --rm -ti --name zalenium -p 4444:4444 ^
+      -v /var/run/docker.sock:/var/run/docker.sock ^
+      -v /videos:/home/seluser/videos ^
+      --privileged dosel/zalenium start
+

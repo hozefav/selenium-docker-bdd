@@ -1,0 +1,7 @@
+# To build package without running any tests
+mvn clean package -DskipTests
+
+# To run tests> go to target folder
+java -cp selenium-docker.jar;selenium-docker-tests.jar;libs/testng-7.3.0;libs/* -DBROWSER=firefox org.testng.TestNG ../search-module.xml
+
+
