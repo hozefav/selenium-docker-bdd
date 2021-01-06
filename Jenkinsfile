@@ -21,7 +21,7 @@ pipeline {
 			        //bat "docker login --username ${user} --password ${pass}"
 			        bat "docker login --username hozefavakanerwala --password Crazy@123"
 			        bat "docker push hozefavakanerwala/selenium-docker:latest"
-			    }                           
+			    //}
             }
         }
     }
