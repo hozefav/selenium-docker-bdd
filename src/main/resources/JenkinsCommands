@@ -1,0 +1,5 @@
+Running Jenkins master:
+docker run -p 8080:8080 -p 50000:50000 -v "C:\Users\hozef\Documents\AutomationProjects\jenkins\jenkins:/var/jenkins_home" jenkins/jenkins
+
+Running slave:
+java -jar agent.jar -jnlpUrl http://localhost:8080/computer/DOCKER1/jenkins-agent.jnlp -secret @secret-file -workDir "C:\Users\hozef\Documents\AutomationProjects\jenkins\slave"
