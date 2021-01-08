@@ -1,6 +1,6 @@
 FROM openjdk:8u191-jre-alpine3.8
 
-RUN apk add curl jq
+RUN apk add curl jq dos2unix
 
 # Workspace
 WORKDIR /usr/share/udemy
@@ -25,4 +25,4 @@ ADD healthcheck.sh healthcheck.sh
 #BROWSER
 #HUB_HOST
 #MODULE
-ENTRYPOINT sh healthcheck.sh
+ENTRYPOINT dos2unix healthcheck.sh
