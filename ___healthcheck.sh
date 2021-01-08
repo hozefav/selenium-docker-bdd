@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Environment Variables
+# Environment Variabless
 # HUB_HOST
 # BROWSER
 # MODULE
@@ -12,4 +12,7 @@ do
 done
 
 # start the java command
-java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/* -DHUB_HOST=$HUB_HOST -DBROWSER=$BROWSER org.testng.TestNG $MODULE
+java -cp selenium-docker.jar:selenium-docker-tests.jar:libs/testng-7.3.0:libs/* \
+    -DHUB_HOST=$HUB_HOST \
+    -DBROWSER=$BROWSER \
+    org.testng.TestNG $MODULE
