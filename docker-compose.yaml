@@ -2,8 +2,10 @@ version: "3"
 services:
   hub:
     image: selenium/hub:3.141.59
-    ports: 
-      - "4444:4444"
+#    ports:
+#      - "4444:4444"
+#    Above lines are only required for local execution. When executing on Jenkins, these can be commented out to avoid
+#    host port utilised error when multiple jobs of same project are executed.
   chrome:
     image: selenium/node-chrome:3.141.59
     shm_size: '1gb'
@@ -27,7 +29,7 @@ services:
         - HUB_HOST=hub
         - MODULE=search-module.xml
       volumes:
-        - ./search-result:/usr/share/udemy/test-output
+        - .output/search-result:/usr/share/udemy/test-output
   book-flight-module:
     image: hozefavakanerwala/selenium-docker
     depends_on:
